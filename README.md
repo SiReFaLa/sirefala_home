@@ -1,10 +1,10 @@
-#しれふぁら！HP用リポジトリ
+# しれふぁら！HP用リポジトリ
 
 バージョンもろもろ
 - node.js: v18.14.2
 - react: v18.2.0
 
---以下デフォルトの説明--
+-- 以下デフォルトの説明 --
 
 # Getting Started with Create React App
 
