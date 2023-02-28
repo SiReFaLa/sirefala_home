@@ -1,4 +1,6 @@
 # しれふぁら！HP用リポジトリ
+
+公開URL: https://sirefala.github.io/sirefala_home/
 機能追加時は
 1. 必要ならdevからブランチを切る
 2. 神実装を書く
