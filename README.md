@@ -1,3 +1,15 @@
+# しれふぁら！HP用リポジトリ
+機能追加時は
+
+バージョンもろもろ
+- node.js: v18.14.2
+- react: v18.2.0
+
+お勉強用サイト
+https://developer.mozilla.org/ja/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started
+
+-- 以下デフォルトの説明 --
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
