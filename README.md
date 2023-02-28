@@ -5,9 +5,9 @@
 機能追加時は  
 1. 必要ならdevからブランチを切る
 2. 神実装を書く
-3. $npm start か test?で試してみる。上手く動いたら次に進む。
-4. $npm run deploy
-5. $git push origin <ブランチ名>
+3. $npm start #debug。上手く動いたら次に進む。
+4. $npm run deploy #gh-pagesブランチを自動的に更新->自動的にHPが更新
+5. $git push origin <ブランチ名> #データは人にも共有しておこう
 
 バージョンもろもろ
 - node.js: v18.14.2
