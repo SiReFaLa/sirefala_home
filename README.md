@@ -1,11 +1,13 @@
 # しれふぁら！HP用リポジトリ
 
-公開URL: https://sirefala.github.io/sirefala_home/
-機能追加時は
+公開URL: https://sirefala.github.io/sirefala_home/  
+
+機能追加時は  
 1. 必要ならdevからブランチを切る
 2. 神実装を書く
-3. $npm run deploy
-4. $git push origin <ブランチ名>
+3. $npm start か test?で試してみる。上手く動いたら次に進む。
+4. $npm run deploy
+5. $git push origin <ブランチ名>
 
 バージョンもろもろ
 - node.js: v18.14.2
