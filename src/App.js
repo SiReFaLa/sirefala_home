@@ -15,7 +15,7 @@ function App() {
       {members.map((it)=>
       <p>
         <a>・ {it[0]} </a> 
-        <a href={'https://twitter.com/'+it[1]}>
+        <a>
           @{it[1]}
         </a>
       </p>)}
