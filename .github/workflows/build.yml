@@ -1,48 +1,46 @@
-# ワークフローの名前
-name: Release GitHub Page
+name: Deploy static content to Pages
 
-# 起動のタイミング
-# mainブランチへのpush
 on:
+  # ★★★Github Actionsを起動するブランチ★★★
   push:
-    branches:
-      - main
+    branches: ["main"]
 
-# ジョブの定義
+  # Github Actionsを手動で起動できるようにする。
+  workflow_dispatch:
+
+# パーミッションの設定
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# これを指定していると、重複してActionsが走った時に前のをキャンセルしてくれる
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  build:
-    # 実行するインスタンス
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
-    # nodeのバージョン一覧
-    strategy:
-      matrix:
-        node-version: ['18.x']
-
-    # 各ステップの実行
     steps:
-
-    # チェックアウト
-    - uses: actions/checkout@v1
-
-    # 使用するnodeのバージョンを指定
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-
-    # パッケージのインストールとアプリのビルド
-    - name: install and build
-      run: |
-        npm ci
-        npm run build
-      env:
-        CI: true
-
-    # gh-pagesを使って公開
-    - name: deploy
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./build
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: build
+        run: npm ci && npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # ★★★ Deployするディレクトリ ★★★
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@main
