@@ -22,7 +22,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git config --global user.email "action@example.com" # push時に使われるgitユーザメールアドレス
+        git config --global user.email "tatekichixe@gmail.com" # push時に使われるgitユーザメールアドレス
         git config --global user.name "GitHub Action"       # push時に使われるgitユーザ名（表示名）
         git remote set-url origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         npm run deploy
