@@ -13,11 +13,11 @@ on:
 permissions: write-all
 
 jobs:
-  build-sample-web:
+  build-and-deploy:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
