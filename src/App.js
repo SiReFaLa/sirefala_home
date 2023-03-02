@@ -12,7 +12,8 @@ function App() {
       ボーマス51に申し込み中。
 
       <h2>メンバー</h2>
-      {members.map((it)=><p>
+      {members.map((it)=>
+      <p>
         <a>・ {it[0]} </a> 
         <a href={'https://twitter.com/'+it[1]}>
           @{it[1]}
@@ -20,7 +21,7 @@ function App() {
       </p>)}
 
       <h2>アルバム</h2>
-        
+
     </div>
   );
 }
