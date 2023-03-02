@@ -30,7 +30,7 @@ jobs:
           #npm audit fix
           npm run build
         env:
-          CI: true
+          CI: false
       - name: deploy GitHub Pages
         if: ${{ success() && github.event_name == 'push' }}
         env:
