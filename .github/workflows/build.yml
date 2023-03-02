@@ -27,8 +27,8 @@ jobs:
       - name: npm install, build and test for app
         run: |
           npm install
-          npm audit fix
-          npm run build --force
+          npm audit fix --force
+          npm run build
         env:
           CI: false
       - name: deploy GitHub Pages
