@@ -27,7 +27,7 @@ jobs:
       - name: npm install, build and test for app
         run: |
           npm install
-          npm audit fix
+          #npm audit fix
           npm run build
         env:
           CI: true
