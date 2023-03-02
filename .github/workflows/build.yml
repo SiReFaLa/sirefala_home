@@ -12,10 +12,21 @@ on:
 
 jobs:
   build-sample-web:
+    permissions:
+     actions: write
+     checks: write
+     contents: write
+     deployments: write
+     issues: write
+     packages: write
+     pull-requests: write
+     repository-projects: write
+     security-events: write
+     statuses: write
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
