@@ -28,7 +28,7 @@ jobs:
         run: |
           npm install
           npm audit fix
-          npm run build
+          npm run build --force
         env:
           CI: false
       - name: deploy GitHub Pages
