@@ -6,13 +6,11 @@
 
 (必要ならmainからブランチを切る。大規模で書くのに時間かかる時とかね))  
 1. 神実装を書く  
-2. (local)$npm start #debug。上手く動いたら次に進む。  
+2. (local)$npm start #debug。上手く動いたら次に進む。  ちなみにWARNINGだからいいやｗって言って次に進んでもHPにデプロイするときに弾かれるよ
 3. (local)$git add .  
 4. (local)$git commit -m "わかりやすいコメント"  
 5. (local)$git push origin <ブランチ名> #データは人にも共有しておこう  
 **mainブランチへpushすると自動的にHPに反映されます。（GitHubでcommitしたりローカルをmainにpushしたりするとなるよ）**
-
-
 
 バージョンもろもろ
 - node.js: v18.14.2
