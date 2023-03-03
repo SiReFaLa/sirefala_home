@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [18.2.0]
+        node-version: [14.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
@@ -27,10 +27,10 @@ jobs:
       - name: npm install, build and test for app
         run: |
           npm install
-          npm audit fix --force
+          npm audit fix
           npm run build
         env:
-          CI: false
+          CI: true
       - name: deploy GitHub Pages
         if: ${{ success() && github.event_name == 'push' }}
         env:
