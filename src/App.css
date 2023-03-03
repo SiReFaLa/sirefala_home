@@ -1,4 +1,5 @@
 .App {
+  align-items: center;
   text-align: center;
 }
 
@@ -15,4 +16,27 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.ContentItem {
+  background-color: #d1e0ff;
+  min-height: 20vh;
+  max-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+}
+
+.ContentSubItem{
+  background-color: #ffffff;
+  min-height: 20vh;
+  max-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
 }

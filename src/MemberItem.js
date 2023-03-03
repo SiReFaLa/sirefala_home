@@ -3,7 +3,7 @@ import data from "./basicData.json"
 
 function MemberItem(){
     return (data.members.map(it =>
-        <div>
+        <div className="ContentSubItem">
           <a href={() => false} >・ {it.name} </a> 
           
           <a href = {'https://twitter.com/'+it.twitterID} >

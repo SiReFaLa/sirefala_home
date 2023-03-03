@@ -10,12 +10,13 @@ function App() {
       </header>
       
       ボーマス51に申し込み中。
-
-      <h2>メンバー</h2>
-      <MemberItem />
-
-      <h2>アルバム</h2>
-
+      <div className='ContentItem'>
+        <h2>メンバー</h2>
+          <MemberItem />
+      </div>
+      <div className='ContentItem'>
+        <h2>アルバム</h2>
+      </div>
     </div>
   );
 }
