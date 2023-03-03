@@ -1,9 +1,9 @@
 import './App.css';
 
-const members = [
-  ["ななみつき","nanamitsuki_73"],
-  ["Urban","aaaa"]
-]
+// const members = [
+//   ["ななみつき","nanamitsuki_73"],
+//   ["Urban","aaaa"]
+// ]
 
 function App() {
   return (
