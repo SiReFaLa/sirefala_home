@@ -24,7 +24,12 @@ function App() {
           <h2>アルバム</h2>
         </div>
       </AnimationTrigger>
+
+      <footer className='App-footer'>
+      
+      </footer>
     </div>
+    
   );
 }
 
