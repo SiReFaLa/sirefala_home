@@ -1,5 +1,5 @@
 import './App.css';
-import MemberItem from './MemberItem.js';
+import MemberItem from './MemberItem.tsx';
 import AnimationTrigger from "./AnimationTrigger.tsx";
 
 function App() {

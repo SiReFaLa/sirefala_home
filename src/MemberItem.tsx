@@ -3,7 +3,7 @@ import data from "./basicData.json"
 import {
   FaTwitter,
   FaYoutube,
-} from "../node_modules/react-icons/fa" 
+} from "react-icons/fa" 
 
 function MemberItem(){
     return (data.members.map(it =>
