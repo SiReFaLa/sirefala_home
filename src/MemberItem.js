@@ -2,12 +2,9 @@ import React from "react";
 import data from "./basicData.json"
 
 function MemberItem(){
-  
-
     return (data.members.map(it =>
-        <p>
+        <div>
           <a href={() => false} >・ {it.name} </a> 
-
           
           <a href = {'https://twitter.com/'+it.twitterID} >
             {
@@ -15,8 +12,7 @@ function MemberItem(){
             }
           </a>
           
-          
-        </p>
+        </div>
       )
     )
 }

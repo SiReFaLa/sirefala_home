@@ -5,7 +5,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>しれふぁら！！</h1>
+      <header className='App-header'>
+        <h1 className='Title-anim'>しれふぁら！！</h1>
+      </header>
+      
       ボーマス51に申し込み中。
 
       <h2>メンバー</h2>
