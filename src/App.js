@@ -1,7 +1,9 @@
 import './App.css';
-import MemberItem from './MemberItem';
+import MemberItem from './MemberItem.js';
+import AnimationTrigger from "./AnimationTrigger.tsx";
 
 function App() {
+
 
   return (
     <div className="App">
@@ -10,13 +12,18 @@ function App() {
       </header>
       
       ボーマス51に申し込み中。
-      <div className='ContentItem'>
-        <h2>メンバー</h2>
-          <MemberItem />
-      </div>
-      <div className='ContentItem'>
-        <h2>アルバム</h2>
-      </div>
+      <AnimationTrigger animation="fadeIn" rootMargin="-100px">
+        <div className='ContentItem'>
+          <h2>メンバー</h2>
+            <MemberItem />
+        </div>
+      </AnimationTrigger>
+
+      <AnimationTrigger animation="fadeIn" rootMargin="-100px">
+        <div className='ContentItem'>
+          <h2>アルバム</h2>
+        </div>
+      </AnimationTrigger>
     </div>
   );
 }
