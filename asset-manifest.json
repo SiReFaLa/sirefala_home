@@ -1,12 +1,15 @@
 {
   "files": {
-    "main.css": "/sirefala_home/static/css/main.ba17183d.css",
-    "main.js": "/sirefala_home/static/js/main.39a005c0.js",
-    "static/js/27.09855457.chunk.js": "/sirefala_home/static/js/27.09855457.chunk.js",
-    "index.html": "/sirefala_home/index.html"
+    "main.css": "/sirefala_home/static/css/main.073c9b0a.css",
+    "main.js": "/sirefala_home/static/js/main.1b6f249f.js",
+    "static/js/787.c1aa03aa.chunk.js": "/sirefala_home/static/js/787.c1aa03aa.chunk.js",
+    "index.html": "/sirefala_home/index.html",
+    "main.073c9b0a.css.map": "/sirefala_home/static/css/main.073c9b0a.css.map",
+    "main.1b6f249f.js.map": "/sirefala_home/static/js/main.1b6f249f.js.map",
+    "787.c1aa03aa.chunk.js.map": "/sirefala_home/static/js/787.c1aa03aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba17183d.css",
-    "static/js/main.39a005c0.js"
+    "static/css/main.073c9b0a.css",
+    "static/js/main.1b6f249f.js"
   ]
 }
