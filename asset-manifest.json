@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/sirefala_home/static/css/main.e32c24ee.css",
-    "main.js": "/sirefala_home/static/js/main.7883cd17.js",
+    "main.js": "/sirefala_home/static/js/main.b65cf0c5.js",
     "static/js/27.09855457.chunk.js": "/sirefala_home/static/js/27.09855457.chunk.js",
     "index.html": "/sirefala_home/index.html"
   },
   "entrypoints": [
     "static/css/main.e32c24ee.css",
-    "static/js/main.7883cd17.js"
+    "static/js/main.b65cf0c5.js"
   ]
 }
