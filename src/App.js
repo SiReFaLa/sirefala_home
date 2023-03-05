@@ -10,14 +10,14 @@ function App() {
       </header>
       
       ボーマス51に申し込み中。
-      <AnimationTrigger animation="fadeIn" rootMargin="-100px">
+      <AnimationTrigger animation="fadeIn" rootMargin="100px">
         <div className='ContentItem'>
           <h2>メンバー</h2>
             <MemberItem />
         </div>
       </AnimationTrigger>
 
-      <AnimationTrigger animation="fadeIn" rootMargin="-100px">
+      <AnimationTrigger animation="fadeIn" rootMargin="100px">
         <div className='ContentItem'>
           <h2>アルバム</h2>
         </div>
