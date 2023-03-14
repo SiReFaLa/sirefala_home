@@ -1,12 +1,17 @@
 {
-    "introduction":{
-        "text":"やぁ！元気かい？私は限界だよ！"
-    },
+    "whats-new":[
+        {
+            "date":"2023/03/09",
+            "message":"ボーマス51に参加申し込みしました。"
+        }
+    ],
     "members":[
         {
-            "name": "ななみつき",
+            "name": "ななみつき",  
+            "twitterID": "nanamitsuki_73",
             "youtubeID": "UC7MR9RVYEZzeEohsAaoz3yA",
-            "twitterID": "nanamitsuki_73"
+            "niconicoID": "50002604",
+            "comment": ""
         },
         {
             "name": "Urban"

@@ -1,6 +1,7 @@
 import './App.css';
-import MemberItem from './MemberItem.js';
+import MemberList from './MemberList.js';
 import AnimationTrigger from "./AnimationTrigger.tsx";
+import data from "./basicData.json"
 
 function App() {
   return (
@@ -9,11 +10,24 @@ function App() {
         <h1 className='Title-anim'>しれふぁら！！</h1>
       </header>
       
-      ボーマス51に申し込み中。
+      <AnimationTrigger animation="fadeIn" rootMargin="50px">
+        <div className='ContentItem'>
+          <h2>What's New</h2>
+          {(()=>{
+            const r = [];
+            data['whats-new'].forEach(element => {
+              r.push(<a>{element.date} {element.message}</a>)
+            })
+            return r;
+          })()}
+        </div>
+      </AnimationTrigger>
+
+      
       <AnimationTrigger animation="fadeIn" rootMargin="50px">
         <div className='ContentItem'>
           <h2>メンバー</h2>
-            <MemberItem />
+            <MemberList />
         </div>
       </AnimationTrigger>
 
