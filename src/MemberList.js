@@ -12,8 +12,8 @@ const SNSList = [
   {ID:"youtubeID",URL:"https://www.youtube.com/channel/",ICON:<FaYoutube />},
   {ID:"niconicoID",URL:"https://www.nicovideo.jp/user/",ICON:<SiNiconico />},
   {ID:"twitterID",URL:"https://twitter.com/",ICON:<FaTwitter />},
-  {ID:"instagramID",URL:"https://twitter.com/",ICON:<FaInstagram />},
-  {ID:"tiktokID",URL:"https://twitter.com/",ICON:<FaTiktok />},
+  {ID:"instagramID",URL:"https://www.instagram.com/",ICON:<FaInstagram />},
+  {ID:"tiktokID",URL:"https://www.tiktok.com/@",ICON:<FaTiktok />},
 ];
 
 function ShowSNSIcon(m){
@@ -32,13 +32,13 @@ function ShowSNSIcon(m){
 
 function MemberItem(){
     return (data.members.map(it =>
+      
         <div key = {it.name} className="ContentSubItem">
           <h3 key = {it.name+"h3"} > {it.name} </h3> 
           <div className="ContentSubSubItem">
-          {
-            ShowSNSIcon(it)
-          }
+            {ShowSNSIcon(it)}
           </div>
+          {it.imgLink ? <img src={it.imgLink} sizes="100px"/> : ""}
         </div>
       )
     )

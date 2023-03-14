@@ -23,7 +23,13 @@ function App() {
         </div>
       </AnimationTrigger>
 
-      
+      <AnimationTrigger animation="fadeIn" rootMargin="50px">
+        <div className='ContentItem'>
+          <h2>アルバム</h2>
+          まだ出てないよ！
+        </div>
+      </AnimationTrigger>
+
       <AnimationTrigger animation="fadeIn" rootMargin="50px">
         <div className='ContentItem'>
           <h2>メンバー</h2>
@@ -31,11 +37,7 @@ function App() {
         </div>
       </AnimationTrigger>
 
-      <AnimationTrigger animation="fadeIn" rootMargin="50px">
-        <div className='ContentItem'>
-          <h2>アルバム</h2>
-        </div>
-      </AnimationTrigger>
+
 
       <footer className='App-footer'>
       
