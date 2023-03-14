@@ -14,7 +14,7 @@ permissions: write-all
 
 jobs:
   build-sample-web:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04.2
     strategy:
       matrix:
         node-version: [14.x]
