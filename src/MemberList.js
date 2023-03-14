@@ -38,7 +38,8 @@ function MemberItem(){
           <div className="ContentSubSubItem">
             {ShowSNSIcon(it)}
           </div>
-          {it.imgLink ? <img src={it.imgLink} sizes="100px"/> : ""}
+          <a>{it.comment}</a>
+          {it.imgLink ? <img src={it.imgLink} width="100" height="100"/> : ""}
         </div>
       )
     )
