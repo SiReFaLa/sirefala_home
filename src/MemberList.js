@@ -39,7 +39,7 @@ function MemberItem(){
             {ShowSNSIcon(it)}
           </div>
           {it.comment}
-          {it.imgLink ? <img src={it.imgLink} width="100" height="100"/> : ""}
+          {it.imgLink ? <img alt = "" src={it.imgLink} width="100" height="100"/> : ""}
         </div>
       )
     )
