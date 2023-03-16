@@ -14,7 +14,7 @@ import {
 const SNSList = [
   {ID:"youtubeID",URL:"https://www.youtube.com/channel/",ICON:<FaYoutube />},
   {ID:"niconicoID",URL:"https://www.nicovideo.jp/user/",ICON:<SiNiconico />},
-  {ID:"bilibiliID",URL:"https://space.bilibili.com/",ICON:<SiNiconico />},
+  {ID:"bilibiliID",URL:"https://space.bilibili.com/",ICON:<SiBilibili />},
   {ID:"twitterID",URL:"https://twitter.com/",ICON:<FaTwitter />},
   {ID:"instagramID",URL:"https://www.instagram.com/",ICON:<FaInstagram />},
   {ID:"tiktokID",URL:"https://www.tiktok.com/@",ICON:<FaTiktok />},
