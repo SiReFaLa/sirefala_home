@@ -1,16 +1,20 @@
 import React from "react";
-import data from "./basicData.json"
+import data from "./PersonalData.json"
 import {
   FaTwitter,
   FaYoutube,
   FaInstagram,
   FaTiktok
 } from "react-icons/fa" 
-import {SiNiconico} from "react-icons/si"
+import {
+  SiNiconico,
+  SiBilibili
+} from "react-icons/si"
 
 const SNSList = [
   {ID:"youtubeID",URL:"https://www.youtube.com/channel/",ICON:<FaYoutube />},
   {ID:"niconicoID",URL:"https://www.nicovideo.jp/user/",ICON:<SiNiconico />},
+  {ID:"bilibiliID",URL:"https://space.bilibili.com/",ICON:<SiNiconico />},
   {ID:"twitterID",URL:"https://twitter.com/",ICON:<FaTwitter />},
   {ID:"instagramID",URL:"https://www.instagram.com/",ICON:<FaInstagram />},
   {ID:"tiktokID",URL:"https://www.tiktok.com/@",ICON:<FaTiktok />},
@@ -35,11 +39,11 @@ function MemberItem(){
       
         <div key = {it.name} className="ContentSubItem">
           <h3 key = {it.name+"h3"} > {it.name} </h3> 
-          <div className="ContentSubSubItem">
-            {ShowSNSIcon(it)}
-          </div>
-          {it.comment}
           {it.imgLink ? <img alt = "" src={it.imgLink} width="100" height="100"/> : ""}
+          {it.comment}
+          <div className="ContentSubSubItem">{ShowSNSIcon(it)}</div>
+          
+          
         </div>
       )
     )

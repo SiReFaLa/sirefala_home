@@ -9,24 +9,9 @@
             "message":"HPを更新しました"
         }
     ],
-    "members":[
+    "album":[
         {
-            "name": "ななみつき",  
-            "youtubeID": "UC7MR9RVYEZzeEohsAaoz3yA",
-            "niconicoID": "50002604",
-
-            "twitterID": "nanamitsuki_73",
-            "instagramID": "",
-            "tiktokID":"nanamitsuki_73",
-
-            "comment": "のんびり曲を作るよ。",
-            "imgLink":"https://pbs.twimg.com/profile_images/1343228076621090816/yoWO3R4l_400x400.jpg"
-        },
-        {
-            "name": "Urban"
-        },
-        {
-            "name":"光る山羊"
+            "title":"16"
         }
     ]
 }
