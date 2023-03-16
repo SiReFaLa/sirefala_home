@@ -39,7 +39,12 @@ function MemberItem(){
       
         <div key = {it.name} className="ContentSubItem">
           <h3 key = {it.name+"h3"} > {it.name} </h3> 
-          {it.imgLink ? <img alt = "" src={it.imgLink} width="100" height="100"/> : ""}
+          <div className="IconImage">
+            {it.imgLink ? <img alt = "" src={it.imgLink} /> : ""}
+          </div>
+          <div>
+            
+          </div>
           {it.comment}
           <div className="ContentSubSubItem">{ShowSNSIcon(it)}</div>
           
