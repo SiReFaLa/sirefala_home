@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/sirefala_home/static/css/main.71a32670.css",
-    "main.js": "/sirefala_home/static/js/main.92850156.js",
+    "main.css": "/sirefala_home/static/css/main.93ff0250.css",
+    "main.js": "/sirefala_home/static/js/main.e73f08ae.js",
     "static/js/27.09855457.chunk.js": "/sirefala_home/static/js/27.09855457.chunk.js",
     "index.html": "/sirefala_home/index.html"
   },
   "entrypoints": [
-    "static/css/main.71a32670.css",
-    "static/js/main.92850156.js"
+    "static/css/main.93ff0250.css",
+    "static/js/main.e73f08ae.js"
   ]
 }
