@@ -16,7 +16,8 @@ function App() {
           {(()=>{
             const r = [];
             data['whats-new'].forEach(element => {
-              r.push(element.date + " " + element.message})
+              r.push(element.date + " " + element.message)
+              r.push(<br></br>)
             })
             return r;
           })()}
