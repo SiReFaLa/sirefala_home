@@ -1,19 +1,34 @@
-# しれふぁら！HP用リポジトリ
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-公開URL: https://sirefala.github.io/sirefala_home/  
+## Getting Started
 
-機能追加時は 
+First, run the development server:
 
-(必要ならmainからブランチを切る。大規模で書くのに時間かかる時とかね))  
-1. 神実装を書く  
-2. (local)$npm start #debug。上手く動いたら次に進む。  ちなみにWARNINGだからいいやｗって言って次に進んでもHPにデプロイするときに弾かれるよ
-3. (local)$git add .  
-4. (local)$git commit -m "わかりやすいコメント"  
-5. (local)$git push origin <ブランチ名> #データは人にも共有しておこう  
-**mainブランチへpushすると自動的にHPに反映されます。（GitHubでcommitしたりローカルをmainにpushしたりするとなるよ）**
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-バージョンもろもろ
-- node.js: v18.14.2
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-お勉強用サイト
-https://developer.mozilla.org/ja/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
