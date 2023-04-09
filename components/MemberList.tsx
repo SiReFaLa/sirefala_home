@@ -59,7 +59,18 @@ function MemberList() {
         <div key={it.name} className="ContentSubItem">
           <h3 key={`${it.name}h3`}> {it.name} </h3>
           <div className="IconImage">
-            {it.imgLink ? <img alt="" src={it.imgLink} /> : ""}
+            {it.imgLink ? (
+              <img
+                alt=""
+                src={it.imgLink}
+                style={{
+                  width: "200px",
+                  height: "auto",
+                }}
+              />
+            ) : (
+              ""
+            )}
           </div>
           {it.comment}
           <div className="ContentSubSubItem">{ShowSNSIcon(it)}</div>

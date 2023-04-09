@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -89,7 +93,6 @@ a {
 }
 
 .IconImage{
-  max-width: 20vh;
   height: auto;
 }
 

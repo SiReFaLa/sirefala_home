@@ -44,10 +44,10 @@ function App() {
 
       <AnimationTrigger animation="fadeIn" rootMargin="50px">
         <div className="ContentItem">
-          <h2>What's New</h2>
+          <h2>わっつにゅー</h2>
           {(() => {
             return NewsData["whats-new"].map((whatsNew) => (
-              <div>
+              <div key={whatsNew.date}>
                 {whatsNew.date} {whatsNew.message}
                 <br />
               </div>
