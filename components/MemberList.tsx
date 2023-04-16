@@ -42,13 +42,13 @@ const SNSList: SNSData[] = [
 
 function ShowSNSIcon(member: Member) {
   return (
-    <div class="flex flex-row">
+    <div className="flex flex-row">
       {SNSList
       .filter((sns)=>{
         return member[sns.id];
       })
       .map((sns) => (
-        <a class ="m-2" href={sns.url + member[sns.id]} target="_blank" rel="noreferrer">
+        <a className ="m-2" href={sns.url + member[sns.id]} key = {sns.id} target="_blank" rel="noreferrer">
           {sns.icon}
         </a>
       ))}
