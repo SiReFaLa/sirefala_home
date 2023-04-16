@@ -38,6 +38,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: out
         run: |
           git config --global user.email "action@example.com"
           git config --global user.name "GitHub Action"
