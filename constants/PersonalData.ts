@@ -43,7 +43,6 @@ const data: { members: Member[] } = {
       imgLink:
         "https://pbs.twimg.com/profile_images/1567080990648172544/Wxy2B8Ae_400x400.jpg",
     },
-      members: [
     {
       name: "Lu",
       youtubeID: "UCpjSeIwGDun_slHEB5qsWaw",
@@ -52,7 +51,15 @@ const data: { members: Member[] } = {
 
       comment: "音楽を聴いたり作ったりします",
       imgLink:
-        "https://pbs.twimg.com/profile_images/1431175947051429892/2piAKv0i_400x400.jpg",
+        "https://pbs.twimg.com/profile_images/1431175947051429892/2piAKv0i_400x400.jpg"
+    },
+    {
+      name: "Dance on Yakiudon",
+      youtubeID: "UCzNKXL8uNeDE-qUgmXwBZ9Q",
+      niconicoID: "48594863",
+      twitterID: "danceonyakiudon",
+      comment: "Onigiri.",
+
     },
   ],
 };
