@@ -42,9 +42,13 @@ const SNSList: SNSData[] = [
 
 function ShowSNSIcon(member: Member) {
   return (
-    <div>
-      {SNSList.map((sns) => (
-        <a href={sns.url + member[sns.id]} target="_blank" rel="noreferrer">
+    <div class="flex flex-row">
+      {SNSList
+      .filter((sns)=>{
+        return member[sns.id];
+      })
+      .map((sns) => (
+        <a class ="m-2" href={sns.url + member[sns.id]} target="_blank" rel="noreferrer">
           {sns.icon}
         </a>
       ))}
@@ -73,7 +77,7 @@ function MemberList() {
             )}
           </div>
           {it.comment}
-          <div className="ContentSubSubItem">{ShowSNSIcon(it)}</div>
+          {ShowSNSIcon(it)}
         </div>
       ))}
     </div>
