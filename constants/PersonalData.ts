@@ -43,6 +43,13 @@ const data: { members: Member[] } = {
       imgLink:
         "https://pbs.twimg.com/profile_images/1567080990648172544/Wxy2B8Ae_400x400.jpg",
     },
+    {
+      name: "Dance on Yakiudon",
+      youtubeID: "UCzNKXL8uNeDE-qUgmXwBZ9Q",
+      niconicoID: "48594863",
+      twitterID: "danceonyakiudon",
+      comment: "Onigiri.",
+    },
   ],
 };
 
