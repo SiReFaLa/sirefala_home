@@ -2,10 +2,10 @@
   "name": "next",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sirefala.github.io/sirefala_home/",
+  "homepage": "https://sirefala.github.io/sirefala_home",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next  build && next export",
     "start": "next start",
     "export": "next export",
     "lint": "next lint",
