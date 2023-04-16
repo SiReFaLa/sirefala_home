@@ -1,12 +1,10 @@
-const urlPrefix = process.env.URL_PREFIX ? '/' + process.env.URL_PREFIX : ''
+//const urlPrefix = process.env.URL_PREFIX ? '/' + process.env.URL_PREFIX : ''
+urlPrefix = "/sirefala_home"
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   assetPrefix: urlPrefix,
   basePath: urlPrefix,
-  reactStrictMode: true,
-  trailingSlash: true
+  trailingSlash: true,
+  publicRuntimeConfig: { urlPrefix },  // ★コレ
 }
-
-module.exports = nextConfig
 
