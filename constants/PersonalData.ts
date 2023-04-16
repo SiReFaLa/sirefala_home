@@ -43,6 +43,17 @@ const data: { members: Member[] } = {
       imgLink:
         "https://pbs.twimg.com/profile_images/1567080990648172544/Wxy2B8Ae_400x400.jpg",
     },
+      members: [
+    {
+      name: "Lu",
+      youtubeID: "UCpjSeIwGDun_slHEB5qsWaw",
+      niconicoID: "78137546",
+      twitterID: "ciel_335",
+
+      comment: "音楽を聴いたり作ったりします",
+      imgLink:
+        "https://pbs.twimg.com/profile_images/1431175947051429892/2piAKv0i_400x400.jpg",
+    },
   ],
 };
 
