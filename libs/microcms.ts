@@ -39,11 +39,11 @@ export const getMemberDetail = async (
 };
 
 if (!process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN) {
-    throw new Error("NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN is required");
+    //throw new Error("NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN is required");
    }
    
 if (!process.env.MICROCMS_API_KEY) {
-    throw new Error("MICROCMS_API_KEY is required");
+    //throw new Error("MICROCMS_API_KEY is required");
 }
 
 // API取得用のクライアントを作成
