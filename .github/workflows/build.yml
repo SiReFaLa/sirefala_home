@@ -30,6 +30,7 @@ jobs:
         run: |
           npm install
           npm audit fix
+          npm info next
           npm run build
           npm run export
         env:
