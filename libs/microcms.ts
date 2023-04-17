@@ -38,8 +38,8 @@ export const getMemberDetail = async (
     return detailData;
 };
 
-if (!process.env.MICROCMS_SERVICE_DOMAIN) {
-    throw new Error("MICROCMS_SERVICE_DOMAIN is required");
+if (!process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN) {
+    throw new Error("NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN is required");
    }
    
 if (!process.env.MICROCMS_API_KEY) {
