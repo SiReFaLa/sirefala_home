@@ -1,7 +1,9 @@
 import React, { ReactNode } from "react";
-import data, { Member } from "../constants/PersonalData";
+import Link from "next/link";
+//import data, { Member } from "../constants/PersonalData";
 import { FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiNiconico, SiBilibili } from "react-icons/si";
+import { Member, getMemberList } from "../libs/microcms";
 
 export type SNSData = {
   id:
@@ -48,40 +50,50 @@ function ShowSNSIcon(member: Member) {
         return member[sns.id];
       })
       .map((sns) => (
-        <a className ="m-2" href={sns.url + member[sns.id]} key = {sns.id} target="_blank" rel="noreferrer">
+        <Link className ="m-2" href={sns.url + member[sns.id]} key = {sns.id} target="_blank" rel="noreferrer">
           {sns.icon}
-        </a>
+        </Link>
       ))}
     </div>
   );
 }
 
-function MemberList() {
+
+export default async function MemberList() {
+  const { contents } = await getMemberList();
+  if(!contents || contents.length === 0){
+    return <h1>No Contents...</h1>
+  }
   return (
+    <>
     <div>
-      {data.members.map((it) => (
-        <div key={it.name} className="ContentSubItem">
-          <h3 key={`${it.name}h3`}> {it.name} </h3>
-          <div className="IconImage">
-            {it.imgLink ? (
-              <img
-                alt=""
-                src={it.imgLink}
-                style={{
-                  width: "200px",
-                  height: "auto",
-                }}
-              />
-            ) : (
-              ""
-            )}
+      {
+      contents.map((member) => {
+        return (
+          <div key={member.name} className="ContentSubItem">
+            <h3 key={`${member.name}h3`}> {member.name} </h3>
+            <div className="IconImage">
+              {member.iconImage ? (
+                <img
+                  alt=""
+                  src={member.iconImage.url}
+                  style={{
+                    width: "200px",
+                    height: "auto",
+                  }}
+                />
+              ) : (
+                ""
+              )}
+            </div>
+            {member.comment}
+            {ShowSNSIcon(member)}
           </div>
-          {it.comment}
-          {ShowSNSIcon(it)}
-        </div>
-      ))}
+        )
+      })}
     </div>
+    </>
   );
 }
 
-export default MemberList;
+

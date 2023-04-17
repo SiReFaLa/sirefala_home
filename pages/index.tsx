@@ -35,7 +35,7 @@ const AnimationTrigger = ({
   );
 };
 
-function App() {
+async function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -66,6 +66,7 @@ function App() {
       <AnimationTrigger animation="fadeIn" rootMargin="50px">
         <div className="ContentItem">
           <h2>メンバー</h2>
+          {/* @ts-expect-error Server Component */}
           <MemberList />
         </div>
       </AnimationTrigger>
