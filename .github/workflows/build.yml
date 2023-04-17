@@ -35,7 +35,7 @@ jobs:
         env:
           CI: true
           NEXT_PUBLIC_URL_PREFIX: ${{ secrets.NEXT_PUBLIC_URL_PREFIX }}
-          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN: ${{ secrets.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN }}
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
       - name: add nojekyll
         run: touch ./out/.nojekyll
