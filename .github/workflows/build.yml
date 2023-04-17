@@ -34,7 +34,7 @@ jobs:
           npm run export
         env:
           CI: true
-          NEXT_PUBLIC_URL_PREFIX: ${{ secrets.NEXT_PUBLIC_URL_PREFIX }}
+          NEXT_PUBLIC_URL_PREFIX: "sirefala_home"
       - name: add nojekyll
         run: touch ./out/.nojekyll
       # gh-pagesブランチにoutディレクトリの中身をプッシュする
