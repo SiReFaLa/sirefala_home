@@ -1,11 +1,10 @@
 import React, { ReactNode } from "react";
-import { GetServerSideProps } from "next";
-import { MicroCMSDate, MicroCMSContentId } from "microcms-js-sdk";
 import Link from "next/link";
 import { FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiNiconico, SiBilibili } from "react-icons/si";
 import { Member, getMemberList } from "../libs/microcms";
-import { error } from "console";
+import { useEffect, useState } from "react";
+
 
 export type SNSData = {
   id:
@@ -60,18 +59,21 @@ function ShowSNSIcon(member: Member) {
   );
 }
 
-let contents : Member[] | undefined;
 
-export default function MemberList(){
-  try{
-    if(!contents){
-      throw getMemberList().then((res)=>{
-        contents = res.contents;
-      })
-    }
-  }catch(e){
-    console.log(e)
-    return <h1> Now Loading </h1>
+
+export default function MemberList() {
+  const [contents, setContents] = useState<Member[] | undefined>(undefined);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { contents } = await getMemberList();
+      setContents(contents);
+    };
+    fetchData();
+  }, []);
+
+  if (!contents) {
+    return <h1>Now Loading</h1>;
   }
   
   return (
