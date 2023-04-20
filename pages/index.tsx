@@ -2,6 +2,8 @@ import React, { ReactNode } from "react";
 import { useInView } from "react-intersection-observer";
 import NewsData from "../constants/NewsData";
 import MemberList from "../components/MemberList";
+import Link from "next/link";
+import { FaTwitter, FaYoutube } from "react-icons/fa";
 
 interface Props {
   children?: ReactNode;
@@ -70,7 +72,11 @@ function App() {
         </div>
       </AnimationTrigger>
 
-      <footer className="App-footer" />
+      <footer className="App-footer">
+        <Link href="https://twitter.com/SiReFaLa"> <FaTwitter/> </Link>
+        <Link href="https://www.youtube.com/channel/UCsDgu7lwSxNdM1rDqcJjYlA"> <FaYoutube/> </Link>
+        <small>©しれふぁら！</small>
+      </footer>
     </div>
   );
 }
