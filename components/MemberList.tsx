@@ -60,19 +60,20 @@ function ShowSNSIcon(member: Member) {
   );
 }
 
-type Props = {
-  contents:Member[],
-};
-
 let contents : Member[] | undefined;
 
-export default function MemberList(){//{contents}:Props) {
-  if(!contents){
-    throw getMemberList().then((res)=>{
-      contents = res.contents;
-    })
+export default function MemberList(){
+  try{
+    if(!contents){
+      throw getMemberList().then((res)=>{
+        contents = res.contents;
+      })
+    }
+  }catch(e){
+    console.log(e)
+    return <h1> Now Loading </h1>
   }
-
+  
   return (
     <>
     <div>
