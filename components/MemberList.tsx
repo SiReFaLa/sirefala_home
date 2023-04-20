@@ -64,10 +64,13 @@ type Props = {
   contents:Member[],
 };
 
-export default function MemberList({contents}:Props) {
-  if(contents.length === 0){
-    
-    return <h1>No Contents...</h1>
+let contents : Member[] | undefined;
+
+export default function MemberList(){//{contents}:Props) {
+  if(!contents){
+    throw getMemberList().then((res)=>{
+      contents = res.contents;
+    })
   }
 
   return (
@@ -101,17 +104,4 @@ export default function MemberList({contents}:Props) {
     </>
   );
 }
-
-export const getServerSideProps : GetServerSideProps = async (c)=> {
-  const {contents} = await getMemberList();
-
-  const props : Props = {
-    contents:contents
-  }
-  
-  return {
-    props:props
-  }
-}
-
 

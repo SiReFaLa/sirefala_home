@@ -6,6 +6,12 @@ module.exports = {
   //  appDir: true,
   //},
 
+  env:{
+
+    B_MICROCMS_SERVICE_DOMAIN : process.env.MICROCMS_SERVICE_DOMAIN,
+    B_MICROCMS_API_KEY : process.env.MICROCMS_API_KEY,
+  },
+
   assetPrefix: urlPrefix,
   basePath: urlPrefix,
   trailingSlash: true,
