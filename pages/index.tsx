@@ -66,7 +66,6 @@ function App() {
       <AnimationTrigger animation="fadeIn" rootMargin="50px">
         <div className="ContentItem">
           <h2>メンバー</h2>
-          {/* @ts-expect-error Server Component */}
           <MemberList />
         </div>
       </AnimationTrigger>
