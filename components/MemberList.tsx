@@ -1,9 +1,11 @@
 import React, { ReactNode } from "react";
+import { GetServerSideProps } from "next";
+import { MicroCMSDate, MicroCMSContentId } from "microcms-js-sdk";
 import Link from "next/link";
-//import data, { Member } from "../constants/PersonalData";
 import { FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiNiconico, SiBilibili } from "react-icons/si";
 import { Member, getMemberList } from "../libs/microcms";
+import { error } from "console";
 
 export type SNSData = {
   id:
@@ -58,12 +60,16 @@ function ShowSNSIcon(member: Member) {
   );
 }
 
+type Props = {
+  contents:Member[],
+};
 
-export default async function MemberList() {
-  const { contents } = await getMemberList();
-  if(!contents || contents.length === 0){
+export default function MemberList({contents}:Props) {
+  if(contents.length === 0){
+    
     return <h1>No Contents...</h1>
   }
+
   return (
     <>
     <div>
@@ -94,6 +100,18 @@ export default async function MemberList() {
     </div>
     </>
   );
+}
+
+export const getServerSideProps : GetServerSideProps = async (c)=> {
+  const {contents} = await getMemberList();
+
+  const props : Props = {
+    contents:contents
+  }
+  
+  return {
+    props:props
+  }
 }
 
 

@@ -35,7 +35,7 @@ const AnimationTrigger = ({
   );
 };
 
-async function App() {
+function App() {
   return (
     <div className="App">
       <header className="App-header">
