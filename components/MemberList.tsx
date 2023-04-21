@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import Link from "next/link";
 import { FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiNiconico, SiBilibili } from "react-icons/si";
-import { Member, getMemberList } from "../libs/microcms";
+import { Member, getList } from "../libs/microcms";
 import { useEffect, useState } from "react";
 
 
@@ -66,7 +66,7 @@ export default function MemberList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { contents } = await getMemberList();
+      const { contents } = await getList("member");
       setContents(contents);
     };
     fetchData();

@@ -1,4 +1,4 @@
-import { createClient} from "microcms-js-sdk"
+import { MicroCMSContentId, createClient} from "microcms-js-sdk"
 import type {
     MicroCMSQueries,
     MicroCMSImage,
@@ -15,7 +15,8 @@ export type Member = {
     tiktokID: string;
     comment: string;
     iconImage: MicroCMSImage;
-    details: string;
+    details: MicroCMSContentId;
+    race: "しれふぁら！" | "イラストレーター" | "Webエンジニア";
 } & MicroCMSDate;
 
 // API取得用のクライアントを作成
@@ -24,9 +25,9 @@ export const client = createClient({
     apiKey: process.env.B_MICROCMS_API_KEY || "",
 });
 
-export const getMemberList = async (queries?: MicroCMSQueries) => {
+export const getList = async (endpoint:string, queries?: MicroCMSQueries) => {
     const listData = await client.getList<Member>({
-     endpoint: "member",
+     endpoint,
      queries,
     });
     
