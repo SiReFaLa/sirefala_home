@@ -4,8 +4,7 @@ import { ParsedUrlQuery } from "querystring";
 
 interface Props {
     page: Page
-  }
-  
+}
 
 interface Params extends ParsedUrlQuery {
     id: string
@@ -13,15 +12,14 @@ interface Params extends ParsedUrlQuery {
 
 export default function PageId( {page}:Props) {
     return (
-        <main>
-        <h1>{page.title}</h1>
-        <p>{page.publishedAt}</p>
-        <div
-            dangerouslySetInnerHTML={{
-            __html: `${page.text}`,
-            }}
-        />
-        </main>
+        <div className="App">
+            <h1 className="ContentItem">{page.title}</h1>
+            <div className="ContentItem"
+                dangerouslySetInnerHTML={{
+                __html: `${page.text}`,
+                }}
+            />
+        </div>
     );
 }
   

@@ -1,12 +1,13 @@
 import React, { ReactNode } from "react";
 import { useInView } from "react-intersection-observer";
+import { FaTwitter, FaYoutube } from "react-icons/fa";
 import NewsData from "../constants/NewsData";
 import MemberList from "../components/MemberList";
 import PageList from "../components/PageList";
-import Head from "next/head";
-import Link from "next/link";
-import { FaTwitter, FaYoutube } from "react-icons/fa";
 import MyHead from "../components/MyHead";
+import Link from "next/link";
+
+
 
 interface Props {
   children?: ReactNode;

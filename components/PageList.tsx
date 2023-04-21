@@ -37,22 +37,19 @@ export default function PageList({limit, kinds}:PageListProps){
                             <h3 key={`${album.title}h3`}> {album.title} </h3>
                             <div className="IconImage">
                             {album.thumbnail ? (
-                                
-                                    <img
-                                        alt=""
-                                        src={album.thumbnail.url}
-                                        style={{
-                                            width: "15vw",
-                                            height: "auto",
-                                        }}
-                                    />
-                                
+                                <img
+                                    alt=""
+                                    src={album.thumbnail.url}
+                                    style={{
+                                        width: "15vw",
+                                        height: "auto",
+                                    }}
+                                />
                             ) : (
                                 ""
                             )}
                             </div>
                             <a className="AbstractArea">{album.abstruct}</a>
-                        
                         </div>
                     </Link>
                     )
