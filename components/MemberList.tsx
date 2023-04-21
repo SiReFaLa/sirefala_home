@@ -90,7 +90,7 @@ export default function MemberList() {
                   alt=""
                   src={member.iconImage.url}
                   style={{
-                    width: "200px",
+                    width: "15vw",
                     height: "auto",
                   }}
                 />
@@ -98,7 +98,7 @@ export default function MemberList() {
                 ""
               )}
             </div>
-            {member.comment}
+            <a className="AbstractArea">{member.comment}</a>
             {ShowSNSIcon(member)}
           </div>
         )

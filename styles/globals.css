@@ -96,6 +96,12 @@ a {
   height: auto;
 }
 
+.AbstractArea{
+  font-size: calc(5px + 2vmin);
+  margin-left: calc(10px + 2vmin);
+  margin-right: calc(10px + 2vmin);
+}
+
 .fadeIn {
   animation: fadeIn 2000ms cubic-bezier(0.19, 1, 0.22, 1);
 }

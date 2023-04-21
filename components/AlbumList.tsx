@@ -25,21 +25,27 @@ export default function AlbumList(){
     return(
         <><div>
             {
-                contents.map((album)=>{
+                contents.map((album) => {
                     return (
-                        <div key={album.title} className="ContentSubItem">
-                            <div className="IconImage">
-                                <img 
-                                    alt=""
-                                    src = {album.thumbnail?.url } 
-                                    style={{
-                                        width: "200px",
-                                        height: "auto",
-                                    }}
-                                />
-                                <h3>{album.title}</h3>
-                            </div>
+                    <div key={album.title} className="ContentSubItem">
+                        <h3 key={`${album.title}h3`}> {album.title} </h3>
+                        <div className="IconImage">
+                        {album.thumbnail ? (
+                            <img
+                                alt=""
+                                src={album.thumbnail.url}
+                                style={{
+                                    width: "15vw",
+                                    height: "auto",
+                                }}
+                            />
+                        ) : (
+                            ""
+                        )}
                         </div>
+                        <a className="AbstractArea">{album.abstruct}</a>
+                        
+                    </div>
                     )
                 })
             }

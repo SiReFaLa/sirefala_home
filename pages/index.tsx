@@ -3,8 +3,10 @@ import { useInView } from "react-intersection-observer";
 import NewsData from "../constants/NewsData";
 import MemberList from "../components/MemberList";
 import AlbumList from "../components/AlbumList";
+import Head from "next/head";
 import Link from "next/link";
 import { FaTwitter, FaYoutube } from "react-icons/fa";
+import MyHead from "../components/MyHead";
 
 interface Props {
   children?: ReactNode;
@@ -41,6 +43,9 @@ const AnimationTrigger = ({
 function App() {
   return (
     <div className="App">
+
+      <MyHead />
+
       <header className="App-header">
         <h1 className="Title-anim">しれふぁら！！</h1>
       </header>
