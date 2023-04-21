@@ -11,14 +11,17 @@ interface MyHeadProps{
 const MyHead : NextPage<MyHeadProps> = (
     {siteName, thumbnailUrl, description}
 )=>{
-    siteName = siteName===undefined?"しれふぁら！":siteName;
+    siteName = siteName===undefined
+        ?"しれふぁら！"
+        :siteName;
 
     thumbnailUrl = thumbnailUrl===undefined
         ?"https://images.microcms-assets.io/assets/2fc5d1610bcb4663a5290dce8f4e76db/b96c4c2e372b4a489548fd9f1fbcba08/713_20230315025156.jpg"
         :thumbnailUrl;
 
     description =  description===undefined
-        ?"しれふぁら！のホームページ":description;
+        ?"しれふぁら！のホームページ"
+        :description;
 
     return(
         <Head>

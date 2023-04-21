@@ -31,14 +31,17 @@ export default function AlbumList(){
                         <h3 key={`${album.title}h3`}> {album.title} </h3>
                         <div className="IconImage">
                         {album.thumbnail ? (
-                            <img
-                                alt=""
-                                src={album.thumbnail.url}
-                                style={{
-                                    width: "15vw",
-                                    height: "auto",
-                                }}
-                            />
+                            <Link href={`/pages/+${album.id}`}>
+                                <img
+                                    alt=""
+                                    src={album.thumbnail.url}
+                                    style={{
+                                        width: "15vw",
+                                        height: "auto",
+                                    }}
+                                />
+                            </Link>
+                            
                         ) : (
                             ""
                         )}

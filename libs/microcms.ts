@@ -22,7 +22,7 @@ export type Member = {
     iconImage: MicroCMSImage;
     details: Page;
     race: "しれふぁら！" | "イラストレーター" | "Webエンジニア";
-} & MicroCMSDate & MicroCMSContents;
+} & MicroCMSDate & MicroCMSContents & MicroCMSContentId;
 
 export type Page = {
     endpoint: "page"
@@ -34,7 +34,7 @@ export type Page = {
     relatedpage: Page[];
     abstruct: string;
     text: string;
-} & MicroCMSDate & MicroCMSContents;
+} & MicroCMSDate & MicroCMSContents & MicroCMSContentId;
 
 // API取得用のクライアントを作成
 export const client = createClient({
