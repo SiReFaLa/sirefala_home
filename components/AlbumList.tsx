@@ -31,7 +31,7 @@ export default function AlbumList(){
                         <h3 key={`${album.title}h3`}> {album.title} </h3>
                         <div className="IconImage">
                         {album.thumbnail ? (
-                            <Link href={`/pages/+${album.id}`}>
+                            <Link href={`/pages/${album.id}`}>
                                 <img
                                     alt=""
                                     src={album.thumbnail.url}
