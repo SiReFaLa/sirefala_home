@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { useInView } from "react-intersection-observer";
 import NewsData from "../constants/NewsData";
 import MemberList from "../components/MemberList";
-import AlbumList from "../components/AlbumList";
+import PageList from "../components/PageList";
 import Head from "next/head";
 import Link from "next/link";
 import { FaTwitter, FaYoutube } from "react-icons/fa";
@@ -67,7 +67,14 @@ function App() {
       <AnimationTrigger animation="fadeIn" rootMargin="50px">
         <div className="ContentItem">
           <h2>アルバム</h2>
-          <AlbumList/>
+          <PageList kinds="アルバム"/>
+        </div>
+      </AnimationTrigger>
+
+      <AnimationTrigger animation="fadeIn" rootMargin="50px">
+        <div className="ContentItem">
+          <h2>ブログ</h2>
+          <PageList kinds="ブログ"/>
         </div>
       </AnimationTrigger>
 
