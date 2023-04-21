@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import Link from "next/link";
 import { FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiNiconico, SiBilibili } from "react-icons/si";
 import { Member, getList } from "../libs/microcms";
-import { useEffect, useState } from "react";
+import LoadingWindow from "./LoadingWindow";
 
 
 export type SNSData = {
@@ -66,14 +66,14 @@ export default function MemberList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { contents } = await getList("member");
+      const { contents } = await getList<Member>("member");
       setContents(contents);
     };
     fetchData();
   }, []);
 
   if (!contents) {
-    return <h1>Now Loading</h1>;
+    return <LoadingWindow/>
   }
   
   return (

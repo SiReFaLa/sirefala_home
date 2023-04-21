@@ -5,7 +5,12 @@ import type {
     MicroCMSDate
 } from "microcms-js-sdk";
 
+type MicroCMSContents = {
+    endpoint: "member"|"page";
+}
+
 export type Member = {
+    endpoint: "member";
     name: string;
     youtubeID: string;
     niconicoID: string;
@@ -15,9 +20,21 @@ export type Member = {
     tiktokID: string;
     comment: string;
     iconImage: MicroCMSImage;
-    details: MicroCMSContentId;
+    details: Page;
     race: "しれふぁら！" | "イラストレーター" | "Webエンジニア";
-} & MicroCMSDate;
+} & MicroCMSDate & MicroCMSContents;
+
+export type Page = {
+    endpoint: "page"
+    title: string;
+    kinds: "ブログ" | "自己紹介" | "曲" | "アルバム";
+    creationDate: MicroCMSDate;
+    thumbnail: MicroCMSImage;
+    writer: MicroCMSContentId;
+    relatedpage: Page[];
+    abstruct: string;
+    text: string;
+} & MicroCMSDate & MicroCMSContents;
 
 // API取得用のクライアントを作成
 export const client = createClient({
@@ -25,8 +42,8 @@ export const client = createClient({
     apiKey: process.env.B_MICROCMS_API_KEY || "",
 });
 
-export const getList = async (endpoint:string, queries?: MicroCMSQueries) => {
-    const listData = await client.getList<Member>({
+export const getList = async <T extends MicroCMSContents>(endpoint : string, queries?: MicroCMSQueries) => {
+    const listData = await client.getList<T>({
      endpoint,
      queries,
     });

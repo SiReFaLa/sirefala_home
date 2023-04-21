@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import { useInView } from "react-intersection-observer";
 import NewsData from "../constants/NewsData";
 import MemberList from "../components/MemberList";
+import AlbumList from "../components/AlbumList";
 import Link from "next/link";
 import { FaTwitter, FaYoutube } from "react-icons/fa";
 
@@ -61,7 +62,7 @@ function App() {
       <AnimationTrigger animation="fadeIn" rootMargin="50px">
         <div className="ContentItem">
           <h2>アルバム</h2>
-          まだ出てないよ！
+          <AlbumList/>
         </div>
       </AnimationTrigger>
 
