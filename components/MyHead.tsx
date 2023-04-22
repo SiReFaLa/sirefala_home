@@ -3,14 +3,18 @@ import { NextPage } from "next";
 import { type } from "os";
 
 interface MyHeadProps{
+    path?:string
     siteName?:string
     thumbnailUrl?:string
     description?:string
 }
 
 const MyHead : NextPage<MyHeadProps> = (
-    {siteName, thumbnailUrl, description}
+    {path, siteName, thumbnailUrl, description}
 )=>{
+    path = path===undefined
+        ?"https://sirefala.github.io/sirefala_home/"
+        :path
     siteName = siteName===undefined
         ?"しれふぁら！"
         :siteName;
@@ -28,6 +32,13 @@ const MyHead : NextPage<MyHeadProps> = (
             <title>{siteName}</title>
             <link rel="icon" href={thumbnailUrl}/>
             <meta name="description" content={description}></meta>
+
+            <meta property="og:url" content={path} />
+            <meta property="og:title" content={siteName} />
+            <meta property="og:site_name" content={"しれふぁら！"} />
+            <meta property="og:description" content={description} />
+            <meta property="og:type" content="website" />
+            <meta property="og:image" content={thumbnailUrl} />
 
             <meta name="twitter:image" content={thumbnailUrl}></meta>
         </Head>
