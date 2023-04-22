@@ -85,7 +85,7 @@ export default function MemberList() {
           <div key={member.name} className="ContentSubItem">
             <h3 key={`${member.name}h3`}> {member.name} </h3>
             <div className="IconImage">
-              <Link href={`/pages/${member.details?.id}`}>
+              <Link href={`/${member.details?.id}`}>
                 {member.iconImage ? (
                   <img
                     alt=""

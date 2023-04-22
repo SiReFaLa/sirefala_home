@@ -1,4 +1,4 @@
-import { client, Page } from "../../libs/microcms";
+import { client, Page } from "../libs/microcms";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { ParsedUrlQuery } from "querystring";
 
@@ -26,7 +26,7 @@ export default function PageId( {page}:Props) {
 export const getStaticPaths : GetStaticPaths<Params> = async () => {
     const {contents} = await client.getList<Page>({ endpoint: "page" });
 
-    const paths = contents.map(content => `/pages/${content.id}`);
+    const paths = contents.map(content => `/${content.id}`);
     return { paths, fallback: false };
 };
 

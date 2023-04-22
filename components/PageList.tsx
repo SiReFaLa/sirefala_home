@@ -36,7 +36,7 @@ export default function PageList({limit, kinds}:PageListProps){
                         <div key={album.title} className="ContentSubItem">
                             <h3 key={`${album.title}h3`}> {album.title} </h3>
                             <div className="IconImage">
-                                <Link href={`/pages/${album.id}`}>
+                                <Link href={`/${album.id}`}>
                                     {album.thumbnail ? (
                                         <img
                                             alt=""
