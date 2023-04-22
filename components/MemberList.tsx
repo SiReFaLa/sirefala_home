@@ -85,18 +85,20 @@ export default function MemberList() {
           <div key={member.name} className="ContentSubItem">
             <h3 key={`${member.name}h3`}> {member.name} </h3>
             <div className="IconImage">
-              {member.iconImage ? (
-                <img
-                  alt=""
-                  src={member.iconImage.url}
-                  style={{
-                    width: "15vw",
-                    height: "auto",
-                  }}
-                />
-              ) : (
-                ""
-              )}
+              <Link href={`/pages/${member.details?.id}`}>
+                {member.iconImage ? (
+                  <img
+                    alt=""
+                    src={member.iconImage.url}
+                    style={{
+                      width: "15vw",
+                      height: "auto",
+                    }}
+                  />
+                ) : (
+                  ""
+                )}
+              </Link>
             </div>
             <a className="AbstractArea">{member.comment}</a>
             {ShowSNSIcon(member)}

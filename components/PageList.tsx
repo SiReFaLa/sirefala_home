@@ -32,26 +32,28 @@ export default function PageList({limit, kinds}:PageListProps){
             {
                 contents.map((album) => {
                     return (
-                    <Link href={`/pages/${album.id}`}>
+                    <div key={album.title} >
                         <div key={album.title} className="ContentSubItem">
                             <h3 key={`${album.title}h3`}> {album.title} </h3>
                             <div className="IconImage">
-                            {album.thumbnail ? (
-                                <img
-                                    alt=""
-                                    src={album.thumbnail.url}
-                                    style={{
-                                        width: "15vw",
-                                        height: "auto",
-                                    }}
-                                />
-                            ) : (
-                                ""
-                            )}
+                                <Link href={`/pages/${album.id}`}>
+                                    {album.thumbnail ? (
+                                        <img
+                                            alt=""
+                                            src={album.thumbnail.url}
+                                            style={{
+                                                width: "15vw",
+                                                height: "auto",
+                                            }}
+                                        />
+                                    ) : (
+                                        ""
+                                    )}
+                                </Link>
                             </div>
                             <a className="AbstractArea">{album.abstruct}</a>
                         </div>
-                    </Link>
+                    </div>
                     )
                 })
             }
