@@ -29,7 +29,6 @@ const MyHead : NextPage<MyHeadProps> = (
             <link rel="icon" href={thumbnailUrl}/>
             <meta name="description" content={description}></meta>
 
-            //twitterカード
             <meta name="twitter:image" content={thumbnailUrl}></meta>
         </Head>
     )
