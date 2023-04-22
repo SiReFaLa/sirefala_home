@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "gh-pages": "^5.0.0",
     "microcms-js-sdk": "^2.3.3",
     "next": "^13.3.0",
