@@ -89,7 +89,7 @@ function App() {
       <footer className="App-footer">
         <Link href="https://twitter.com/SiReFaLa"> <FaTwitter/> </Link>
         <Link href="https://www.youtube.com/channel/UCsDgu7lwSxNdM1rDqcJjYlA"> <FaYoutube/> </Link>
-        <small>©しれふぁら！</small>
+        <small>Copyright ©2023 しれふぁら！</small>
       </footer>
     </div>
   );

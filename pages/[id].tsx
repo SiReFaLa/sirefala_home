@@ -1,3 +1,8 @@
+/*
+ブログ/自己紹介/曲/アルバム...のPageデータからサイトをビルド時に作成。
+
+*/
+
 import { client, Page } from "../libs/microcms";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { ParsedUrlQuery } from "querystring";
