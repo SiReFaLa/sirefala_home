@@ -30,7 +30,7 @@ const MyHead : NextPage<MyHeadProps> = (
             <meta name="description" content={description}></meta>
 
             //twitterカード
-            <meta name="twitter:image" content={thumbnailUrl} />
+            <meta name="twitter:image" content={thumbnailUrl}></meta>
         </Head>
     )
 }
