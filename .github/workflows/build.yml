@@ -38,6 +38,8 @@ jobs:
           NEXT_PUBLIC_URL_PREFIX: ${{ secrets.NEXT_PUBLIC_URL_PREFIX }}
           MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+          NEWT_SPACE_UID: ${{ secrets.NEWT_SPACE_UID }}
+          NEWT_CDN_API_TOKEN: ${{ secrets.NEWT_CDN_API_TOKEN }}
       - name: add nojekyll
         run: touch ./out/.nojekyll
       # gh-pagesブランチにoutディレクトリの中身をプッシュする
