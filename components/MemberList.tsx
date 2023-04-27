@@ -4,6 +4,7 @@ import { FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiNiconico, SiBilibili } from "react-icons/si";
 import { Member, getList } from "../libs/newt";
 import LoadingWindow from "./LoadingWindow";
+import { Query } from "newt-client-js/dist/types/types";
 
 
 export type SNSData = {
@@ -80,7 +81,9 @@ export default function MemberList() {
     <>
     <div>
       {
-      contents.map((member) => {
+      contents.sort((a,b)=>{
+        return a._sys.customOrder > b._sys.customOrder ? -1 : 1;
+      }).map((member) => {
         return (
           <div key={member.name} className="ContentSubItem">
             <h3 key={`${member.name}h3`}> {member.name} </h3>

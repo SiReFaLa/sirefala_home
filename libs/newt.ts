@@ -6,6 +6,7 @@ export type Member = {
     _sys: {
       createdAt: string;
       updatedAt: string;
+      customOrder: string;
       raw: {
         createdAt: string;
         updatedAt: string;
@@ -39,6 +40,7 @@ export type Blog = {
     _sys: {
       createdAt: string;
       updatedAt: string;
+      customOrder: string;
       raw: {
         createdAt: string;
         updatedAt: string;
