@@ -2,13 +2,13 @@
 ブログ/自己紹介/曲/アルバム...のPageデータからサイトをビルド時に作成。
 
 */
-
-import { client, Page } from "../libs/microcms";
+import React, { ReactNode, useEffect, useState } from "react";
+import { client, Blog, getList } from "../libs/newt";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { ParsedUrlQuery } from "querystring";
 import MyHead from "../components/MyHead";
 
-interface Props {page: Page}
+interface Props {page: Blog}
 
 interface Params extends ParsedUrlQuery {id: string}
 
@@ -27,16 +27,16 @@ export default function PageId( {page}:Props) {
 }
   
 export const getStaticPaths : GetStaticPaths<Params> = async () => {
-    const {contents} = await client.getList<Page>({ endpoint: "page" });
+    const contents  = (await getList<Blog>("homepage","blog")).items;
 
-    const paths = contents.map(content => `/${content.id}`);
+    const paths = contents.map(content => `/${content._id}`);
     return { paths, fallback: false };
 };
 
 export const getStaticProps : GetStaticProps<Props,Params> = async ({params}) => {
     if(!params) throw new Error("params is undefined")
     const id = params.id;
-    const page = await client.get<Page>({ endpoint: "page", contentId: id });
+    const page = await client.getContent<Blog>({ appUid:"homepage",modelUid:"blog", contentId: id });
 
     return {
         props: {

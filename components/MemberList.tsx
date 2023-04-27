@@ -2,7 +2,7 @@ import React, { ReactNode, useEffect, useState } from "react";
 import Link from "next/link";
 import { FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiNiconico, SiBilibili } from "react-icons/si";
-import { Member, getList } from "../libs/microcms";
+import { Member, getList } from "../libs/newt";
 import LoadingWindow from "./LoadingWindow";
 
 
@@ -66,7 +66,7 @@ export default function MemberList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { contents } = await getList<Member>("member");
+      const contents  = (await getList<Member>("homepage","member")).items;
       setContents(contents);
     };
     fetchData();
@@ -85,11 +85,11 @@ export default function MemberList() {
           <div key={member.name} className="ContentSubItem">
             <h3 key={`${member.name}h3`}> {member.name} </h3>
             <div className="IconImage">
-              <Link href={`/${member.details?.id}`}>
+              <Link href={`/${member.details?._id}`}>
                 {member.iconImage ? (
                   <img
                     alt=""
-                    src={member.iconImage.url}
+                    src={member.iconImage.src}
                     style={{
                       width: "15vw",
                       height: "auto",

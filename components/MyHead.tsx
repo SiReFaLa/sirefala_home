@@ -39,8 +39,6 @@ const MyHead : NextPage<MyHeadProps> = (
             <meta property="og:description" content={description} />
             <meta property="og:type" content="website" />
             <meta property="og:image" content={thumbnailUrl} />
-
-            <meta name="twitter:image" content={thumbnailUrl}></meta>
         </Head>
     )
 }

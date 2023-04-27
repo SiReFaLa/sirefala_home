@@ -1,8 +1,8 @@
 import React, { ReactNode, useEffect, useState } from "react";
-import { MicroCMSQueries } from "microcms-js-sdk";
-import { Page, getList } from "../libs/microcms";
+import { Blog, getList } from "../libs/newt";
 import LoadingWindow from "./LoadingWindow";
 import Link from "next/link";
+import { Query } from "newt-client-js/dist/types/types";
 
 interface PageListProps{
     limit?:number
@@ -10,14 +10,13 @@ interface PageListProps{
 }
 
 export default function PageList({limit, kinds}:PageListProps){
-    const [contents, setContents] = useState<Page[] | undefined>(undefined);
+    const [contents, setContents] = useState<Blog[] | undefined>(undefined);
     useEffect(() => {
         const fetchData = async () => {
-            const queries : MicroCMSQueries = {
+            const queries : Query = {
                 limit : limit,
-                filters : "kinds[contains]"+kinds,
             }
-            const { contents } = await getList<Page>("page", queries);
+            const contents = (await getList<Blog>("homepage","blog",queries)).items;
             setContents(contents);
         };
         fetchData();
@@ -27,20 +26,26 @@ export default function PageList({limit, kinds}:PageListProps){
         return <LoadingWindow/>
     }
 
+    if(contents.length===0){
+        return <a>No Content</a>
+    }
+
     return(
         <><div>
             {
-                contents.map((album) => {
+                contents.filter(blog=>{
+                    return blog.tag.includes(kinds)
+                }).map((blog) => {
                     return (
-                    <div key={album.title} >
-                        <div key={album.title} className="ContentSubItem">
-                            <h3 key={`${album.title}h3`}> {album.title} </h3>
+                    <div key={blog.title} >
+                        <div key={blog.title} className="ContentSubItem">
+                            <h3 key={`${blog.title}h3`}> {blog.title} </h3>
                             <div className="IconImage">
-                                <Link href={`/${album.id}`}>
-                                    {album.thumbnail ? (
+                                <Link href={`/${blog._id}`}>
+                                    {blog.thumbnail ? (
                                         <img
                                             alt=""
-                                            src={album.thumbnail.url}
+                                            src={blog.thumbnail.src}
                                             style={{
                                                 width: "15vw",
                                                 height: "auto",
@@ -51,7 +56,7 @@ export default function PageList({limit, kinds}:PageListProps){
                                     )}
                                 </Link>
                             </div>
-                            <a className="AbstractArea">{album.abstruct}</a>
+                            <a className="AbstractArea">{blog.abstruct}</a>
                         </div>
                     </div>
                     )

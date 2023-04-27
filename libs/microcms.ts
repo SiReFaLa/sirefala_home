@@ -22,7 +22,7 @@ export type Member = {
     iconImage: MicroCMSImage;
     details: Page;
     race: "しれふぁら！" | "イラストレーター" | "Webエンジニア";
-} & MicroCMSDate & MicroCMSContents & MicroCMSContentId;
+} & MicroCMSContentId;
 
 export type Page = {
     endpoint: "page"
@@ -34,7 +34,7 @@ export type Page = {
     relatedpage: Page[];
     abstruct: string;
     text: string;
-} & MicroCMSDate & MicroCMSContents & MicroCMSContentId;
+} & MicroCMSContentId;
 
 // API取得用のクライアントを作成
 export const client = createClient({
@@ -43,24 +43,12 @@ export const client = createClient({
 });
 
 export const getList = async <T extends MicroCMSContents>(endpoint : string, queries?: MicroCMSQueries) => {
-    const listData = await client.getList<T>({
+    const listData = await client.get<T>({
      endpoint,
      queries,
     });
     
     return listData;
-};
-
-export const getMemberDetail = async (
-        contentId: string,
-        queries?: MicroCMSQueries
-    ) => {
-        const detailData = await client.getListDetail<Member>({
-        endpoint: "member",
-        contentId,
-        queries,
-    });
-    return detailData;
 };
 
 
