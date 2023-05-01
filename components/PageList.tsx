@@ -1,5 +1,5 @@
 import React, { ReactNode, useEffect, useState } from "react";
-import { Blog, getList } from "../libs/newt";
+import { Blog, getItemsHook} from "../libs/newt";
 import LoadingWindow from "./LoadingWindow";
 import Link from "next/link";
 import { Query } from "newt-client-js/dist/types/types";
@@ -10,17 +10,12 @@ interface PageListProps{
 }
 
 export default function PageList({limit, kinds}:PageListProps){
-    const [contents, setContents] = useState<Blog[] | undefined>(undefined);
-    useEffect(() => {
-        const fetchData = async () => {
-            const queries : Query = {
-                limit : limit,
-            }
-            const contents = (await getList<Blog>("homepage","blog",queries)).items;
-            setContents(contents);
-        };
-        fetchData();
-    }, []);
+    
+    const queries : Query = {
+        limit : limit,
+    }
+    const contents = getItemsHook<Blog>("homepage","blog",queries);
+            
 
     if (!contents) {
         return <LoadingWindow/>
@@ -45,7 +40,7 @@ export default function PageList({limit, kinds}:PageListProps){
                                     {blog.thumbnail ? (
                                         <img
                                             alt=""
-                                            src={blog.thumbnail.src}
+                                            src={ blog.thumbnail.src }
                                             style={{
                                                 width: "15vw",
                                                 height: "auto",

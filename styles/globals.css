@@ -57,7 +57,7 @@ a {
 
 .ContentItem {
   background-color: #d1e0ff;
-  min-height: 20vh;
+  min-height: 0vh;
   min-width: 80vw;
   display: flex;
   flex-direction: column;

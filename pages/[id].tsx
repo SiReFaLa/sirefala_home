@@ -3,7 +3,7 @@
 
 */
 import React, { ReactNode, useEffect, useState } from "react";
-import { client, Blog, getList } from "../libs/newt";
+import { client, Blog, getItemsHook, getItemsAsync } from "../libs/newt";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { ParsedUrlQuery } from "querystring";
 import MyHead from "../components/MyHead";
@@ -27,7 +27,7 @@ export default function PageId( {page}:Props) {
 }
   
 export const getStaticPaths : GetStaticPaths<Params> = async () => {
-    const contents  = (await getList<Blog>("homepage","blog")).items;
+    const contents  = await getItemsAsync<Blog>("homepage","blog");
 
     const paths = contents.map(content => `/${content._id}`);
     return { paths, fallback: false };

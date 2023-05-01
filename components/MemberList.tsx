@@ -2,7 +2,7 @@ import React, { ReactNode, useEffect, useState } from "react";
 import Link from "next/link";
 import { FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiNiconico, SiBilibili } from "react-icons/si";
-import { Member, getList } from "../libs/newt";
+import { Member, getItemsHook } from "../libs/newt";
 import LoadingWindow from "./LoadingWindow";
 import { Query } from "newt-client-js/dist/types/types";
 
@@ -63,15 +63,8 @@ function ShowSNSIcon(member: Member) {
 
 
 export default function MemberList() {
-  const [contents, setContents] = useState<Member[] | undefined>(undefined);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const contents  = (await getList<Member>("homepage","member")).items;
-      setContents(contents);
-    };
-    fetchData();
-  }, []);
+  const contents = getItemsHook<Member>("homepage","member");
+      
 
   if (!contents) {
     return <LoadingWindow/>

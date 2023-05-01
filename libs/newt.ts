@@ -1,8 +1,10 @@
+import {useEffect, useState} from "react";
 import {createClient, Content, Contents} from "newt-client-js"
 import { Query } from "newt-client-js/dist/types/types";
+import { type } from "os";
 
-export type Member = {
-    _id: string;
+type NewtContent = {
+	_id: string;
     _sys: {
       createdAt: string;
       updatedAt: string;
@@ -14,6 +16,10 @@ export type Member = {
         publishedAt: string;
       };
     };
+}
+
+export type Member = {
+    
     name: string;
     youtubeID: string;
     niconicoID: string;
@@ -33,21 +39,9 @@ export type Member = {
       height: number;
     };
     race: "しれふぁら！" | "イラストレーター" | "Webエンジニア";
-  };
+  } & NewtContent;
 
 export type Blog = {
-    _id: string;
-    _sys: {
-      createdAt: string;
-      updatedAt: string;
-      customOrder: string;
-      raw: {
-        createdAt: string;
-        updatedAt: string;
-        firstPublishedAt: string;
-        publishedAt: string;
-      };
-    };
     title: string;
     thumbnail: {
       _id: string;
@@ -58,12 +52,14 @@ export type Blog = {
       width: number;
       height: number;
     };
-    writer: string;
+    writer: Member;
     tag: string;
     relatedpage: string[];
     abstruct: string;
     text: string;
-  }
+  } & NewtContent;
+
+type NewtItem = Blog | Member;
 
 // API取得用のクライアントを作成
 export const client = createClient({
@@ -71,15 +67,38 @@ export const client = createClient({
     token: process.env.B_NEWT_CDN_API_TOKEN || "",
 });
 
-export const getList = async <T>(appUid : string,modelUid :string, query?: Query) => {
-    const listData = await client.getContents<T>({
-     appUid,
-     modelUid,
-     query
-    });
-    
-    return listData;
+export const getItemsHook = <T extends NewtItem>(appUid : string,modelUid :string, query?: Query) => {
+	const [contents, setContents] = useState<T[] | undefined>(undefined);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const contents = await client.getContents<T>({
+				appUid,
+				modelUid,
+				query
+			});
+			setContents(contents.items);
+		};
+    	fetchData();
+  	}, []);
+	if(!contents){
+		return undefined;
+	}else{
+		return contents;
+	}
 };
+
+export const getItemsAsync = async <T extends NewtItem>(appUid : string,modelUid :string, query?: Query) => {
+	const contents = await client.getContents<T>({
+		appUid,
+		modelUid,
+		query
+	});
+	
+	return contents.items;
+};
+
+
 
 
 
